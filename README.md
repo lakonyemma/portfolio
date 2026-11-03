@@ -37,3 +37,18 @@ Project entries live in the `PROJECTS` array in `script.js`. Some projects are p
 ## Notes
 
 This is a static frontend. No form contents are submitted to a service, and publishing the site does not require any payment.
+
+## Google Search visibility
+
+The portfolio includes descriptive metadata, a canonical URL, `Person` JSON-LD and a sitemap at `https://lakonyemma.github.io/portfolio/sitemap.xml`.
+
+To help Google discover the site:
+
+1. Open [Google Search Console](https://search.google.com/search-console/).
+2. Add a **URL prefix** property for `https://lakonyemma.github.io/portfolio/`.
+3. Complete ownership verification using a supported method. If selecting an **HTML tag**, add the provided exact `google-site-verification` tag to the `<head>` of `index.html`, publish the change, then click Verify.
+4. In Search Console, submit `sitemap.xml` under **Sitemaps**.
+5. Use **URL Inspection** to request indexing for `https://lakonyemma.github.io/portfolio/`.
+6. Be patient: indexing can take days or weeks and isn't guaranteed.
+
+Only publish professional details you're comfortable sharing publicly. Do not include personal contact details, private addresses, school schedules, or private accounts in public SEO metadata.
