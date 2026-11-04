@@ -21,7 +21,7 @@
       <div>
         <h1>Software <span>Engineer.</span></h1>
         <p>I'm Lakony Emmanuel. I enjoy creating websites, applications and useful software.</p>
-        <button disabled>Explore my work</button>
+        <button id="explore">Explore my work</button>
       </div>
       <div class="art">
         <div class="ring"></div>
@@ -32,10 +32,10 @@
     <section id="work">
       <h1>My <span>Work.</span></h1>
       <div class="projects">
-        <article><h2>Taskly</h2><p>A task management application for organizing work and collaborating with teams.</p><p>React · Node.js · PostgreSQL</p><button disabled>View project</button></article>
-        <article><h2>Workwise</h2><p>A task allocation and workload management system.</p><p>ASP.NET · JavaScript · MySQL</p><button disabled>View project</button></article>
-        <article><h2>SheVault</h2><p>A platform for managing group membership and contributions.</p><p>Next.js · TypeScript</p><button disabled>View project</button></article>
-        <article><h2>Campus Hub</h2><p>A student application for organizing coursework and timetables.</p><p>React Native · Expo</p><button disabled>View project</button></article>
+        <article><h2>Taskly</h2><p>A task management application for organizing work and collaborating with teams.</p><p>React · Node.js · PostgreSQL</p><button class="project-button" type="button">View project</button></article>
+        <article><h2>Workwise</h2><p>A task allocation and workload management system.</p><p>ASP.NET · JavaScript · MySQL</p><button class="project-button" type="button">View project</button></article>
+        <article><h2>SheVault</h2><p>A platform for managing group membership and contributions.</p><p>Next.js · TypeScript</p><button class="project-button" type="button">View project</button></article>
+        <article><h2>Campus Hub</h2><p>A student application for organizing coursework and timetables.</p><p>React Native · Expo</p><button class="project-button" type="button">View project</button></article>
       </div>
     </section>
     <section id="about">
@@ -49,10 +49,10 @@
       <p>Interested in my work? You can find me on GitHub.</p>
       <p><a href="https://github.com/lakonyemma" target="_blank" rel="noopener noreferrer">github.com/lakonyemma</a></p>
       <form>
-        <input type="text" placeholder="Your name" aria-label="Your name">
-        <input type="email" placeholder="Your email" aria-label="Your email">
-        <textarea placeholder="Your message" aria-label="Your message"></textarea>
-        <button disabled type="button">Send message</button>
+        <input required type="text" placeholder="Your name" aria-label="Your name">
+        <input required type="email" placeholder="Your email" aria-label="Your email">
+        <textarea required placeholder="Your message" aria-label="Your message"></textarea>
+        <button type="submit">Prepare email</button>
       </form>
     </section>
   </main>
