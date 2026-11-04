@@ -2,87 +2,61 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Lakony Emmanuel is a software engineer. Explore his projects, skills and experience.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Lakony Emmanuel | Software Engineer</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <a class="logo" href="#home">LE<span>.</span></a>
-    <nav aria-label="Main navigation">
-      <a href="#home" class="active">Home</a>
+    <h2>Lakony Emmanuel</h2>
+    <nav>
+      <a href="#home">Home</a>
       <a href="#work">Work</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
   <main>
-    <section id="home" class="page active">
-      <div class="home-layout">
-        <div class="home-text">
-          <p class="small-title">HELLO, I'M LAKONY EMMANUEL</p>
-          <h1>Software<br><span>Engineer.</span></h1>
-          <p>I build websites, applications and software systems. I enjoy solving problems, learning new technologies and turning ideas into working projects.</p>
-          <div class="buttons">
-            <button disabled>Explore my work ↗</button>
-            <button disabled class="outline">Let's connect ↗</button>
-          </div>
-        </div>
-        <div class="animation-box" aria-hidden="true">
-          <div class="ring ring-one"></div>
-          <div class="ring ring-two"></div>
-          <div class="ring ring-three"></div>
-          <div class="code-symbol">&lt;/&gt;</div>
-        </div>
+    <section id="home">
+      <div>
+        <h1>Software <span>Engineer.</span></h1>
+        <p>I'm Lakony Emmanuel. I enjoy creating websites, applications and useful software.</p>
+        <button disabled>Explore my work</button>
+      </div>
+      <div class="art">
+        <div class="ring"></div>
+        <div class="ring second"></div>
+        <strong>&lt;/&gt;</strong>
       </div>
     </section>
-    <section id="work" class="page">
-      <p class="small-title">MY PROJECTS</p>
-      <h2>Selected <span>Work.</span></h2>
-      <p class="section-description">Some projects I have worked on.</p>
-      <div class="project-grid">
-        <article class="project"><span>01 / WEB APPLICATION</span><h3>Taskly</h3><p>A task management application for organizing work, tracking progress and collaborating with teams.</p><div class="tags"><span>React</span><span>Node.js</span><span>PostgreSQL</span></div><button disabled>View project ↗</button></article>
-        <article class="project"><span>02 / MANAGEMENT SYSTEM</span><h3>Workwise</h3><p>A task allocation and workload management system for supervisors and employees.</p><div class="tags"><span>ASP.NET</span><span>JavaScript</span><span>MySQL</span></div><button disabled>View project ↗</button></article>
-        <article class="project"><span>03 / WEB PLATFORM</span><h3>SheVault</h3><p>A platform for managing group membership, contributions and meetings.</p><div class="tags"><span>Next.js</span><span>TypeScript</span></div><button disabled>View project ↗</button></article>
-        <article class="project"><span>04 / MOBILE APPLICATION</span><h3>Campus Hub</h3><p>A student application for organizing coursework, timetables and assignments.</p><div class="tags"><span>React Native</span><span>Expo</span></div><button disabled>View project ↗</button></article>
+    <section id="work">
+      <h1>My <span>Work.</span></h1>
+      <div class="projects">
+        <article><h2>Taskly</h2><p>A task management application for organizing work and collaborating with teams.</p><p>React · Node.js · PostgreSQL</p><button disabled>View project</button></article>
+        <article><h2>Workwise</h2><p>A task allocation and workload management system.</p><p>ASP.NET · JavaScript · MySQL</p><button disabled>View project</button></article>
+        <article><h2>SheVault</h2><p>A platform for managing group membership and contributions.</p><p>Next.js · TypeScript</p><button disabled>View project</button></article>
+        <article><h2>Campus Hub</h2><p>A student application for organizing coursework and timetables.</p><p>React Native · Expo</p><button disabled>View project</button></article>
       </div>
     </section>
-    <section id="about" class="page">
-      <p class="small-title">ABOUT ME</p>
-      <h2>Behind the <span>Code.</span></h2>
-      <div class="about-grid">
-        <div>
-          <h3>I'm Lakony Emmanuel.</h3>
-          <p>I'm studying Software Engineering at ISBAT University. I enjoy building practical software, understanding how systems work and improving my programming skills.</p>
-          <p>I work with frontend technologies, backend development and databases. Each project helps me learn something new.</p>
-          <div class="education"><strong>Education</strong><p>Diploma in Software Engineering<br>ISBAT University</p></div>
-        </div>
-        <div class="skills">
-          <h3>Technical Skills</h3>
-          <h4>Languages</h4><div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>TypeScript</span><span>C#</span><span>Java</span><span>C</span></div>
-          <h4>Frameworks & Tools</h4><div class="tags"><span>React</span><span>Next.js</span><span>Node.js</span><span>ASP.NET</span><span>Git</span><span>GitHub</span></div>
-          <h4>Databases</h4><div class="tags"><span>MySQL</span><span>PostgreSQL</span></div>
-        </div>
-      </div>
+    <section id="about">
+      <h1>About <span>Me.</span></h1>
+      <p>I'm a Software Engineering student at ISBAT University. I enjoy solving problems and learning how software works.</p>
+      <h2>Skills</h2>
+      <p>HTML, CSS, JavaScript, TypeScript, Java, C#, C, React, Node.js, ASP.NET, MySQL and PostgreSQL.</p>
     </section>
-    <section id="contact" class="page">
-      <p class="small-title">CONTACT</p>
-      <h2>Get in <span>Touch.</span></h2>
-      <p class="section-description">Have a project or question? You can find me on GitHub.</p>
-      <div class="contact-box">
-        <h3>Send an inquiry</h3>
-        <form>
-          <label for="name">Your name</label><input id="name" type="text" placeholder="Your name">
-          <label for="email">Your email</label><input id="email" type="email" placeholder="you@example.com">
-          <label for="message">Your message</label><textarea id="message" rows="5" placeholder="Write your message..."></textarea>
-          <button disabled type="button">Send message ↗</button>
-        </form>
-        <p class="contact-note">GitHub: <a href="https://github.com/lakonyemma" target="_blank" rel="noopener noreferrer">github.com/lakonyemma</a></p>
-      </div>
+    <section id="contact">
+      <h1>Contact <span>Me.</span></h1>
+      <p>Interested in my work? You can find me on GitHub.</p>
+      <p><a href="https://github.com/lakonyemma" target="_blank" rel="noopener noreferrer">github.com/lakonyemma</a></p>
+      <form>
+        <input type="text" placeholder="Your name" aria-label="Your name">
+        <input type="email" placeholder="Your email" aria-label="Your email">
+        <textarea placeholder="Your message" aria-label="Your message"></textarea>
+        <button disabled type="button">Send message</button>
+      </form>
     </section>
   </main>
-  <footer><span>© <span id="year"></span> Lakony Emmanuel</span><span>Built with HTML, CSS and JavaScript</span></footer>
+  <footer>© Lakony Emmanuel</footer>
   <script src="script.js"></script>
 </body>
 </html>
