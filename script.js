@@ -1,25 +1,14 @@
+const pages = document.querySelectorAll('main section');
 const links = document.querySelectorAll('nav a');
-const pages = document.querySelectorAll('.page');
 
 function showPage() {
-  let pageName = window.location.hash.substring(1) || 'home';
-  let pageExists = document.getElementById(pageName);
+  const name = location.hash.slice(1) || 'home';
+  const current = document.getElementById(name);
+  const page = current && current.tagName === 'SECTION' ? name : 'home';
 
-  if (!pageExists || !pageExists.classList.contains('page')) {
-    pageName = 'home';
-  }
-
-  pages.forEach(function(page) {
-    page.classList.toggle('active', page.id === pageName);
-  });
-
-  links.forEach(function(link) {
-    link.classList.toggle('active', link.getAttribute('href') === '#' + pageName);
-  });
-
-  window.scrollTo(0, 0);
+  pages.forEach(section => section.classList.toggle('active', section.id === page));
+  links.forEach(link => link.classList.toggle('active', link.hash === '#' + page));
 }
 
 window.addEventListener('hashchange', showPage);
-window.addEventListener('load', showPage);
-document.getElementById('year').textContent = new Date().getFullYear();
+showPage();
