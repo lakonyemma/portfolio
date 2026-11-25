@@ -135,7 +135,7 @@ function renderProjects() {
     <a class="project-card" href="#work" data-project="${project.id}" aria-label="Explore ${project.name} project details">
       ${sceneMarkup(project)}
       <div class="project-info"><div><h3>${project.name}</h3><p>${project.subtitle}</p></div><span class="project-arrow" aria-hidden="true">↗</span></div>
-    </button>`).join('');
+    </a>`).join('');
   $$('.filter-pill').forEach(pill => {
     const active = pill.dataset.filter === currentFilter;
     pill.classList.toggle('is-selected', active);
