@@ -8,7 +8,7 @@ const CONTACT_EMAIL = '';
 
 const PROJECTS = [
   {
-    id: 'taskly', number: '01', name: 'Taskly',
+    id: 'taskly', name: 'Taskly',
     subtitle: 'A smarter way to get work done',
     category: ['web', 'systems'], label: 'FULL-STACK WEB APP', year: '2026',
     description: 'A task and team management platform designed around the realities of getting things done: projects, people, deadlines and the details in between. Built to support both individual focus and collaborative workflows.',
@@ -17,7 +17,7 @@ const PROJECTS = [
     repo: 'https://github.com/lakonyemma/TaskManager', isPrivate: false
   },
   {
-    id: 'workwise', number: '02', name: 'Workwise',
+    id: 'workwise', name: 'Workwise',
     subtitle: 'Intelligent task & workload management',
     category: ['web', 'systems'], label: 'TEAM SYSTEM', year: '2026',
     description: 'An intelligent task allocation and workload management system for coordinating team responsibilities, tracking employee progress, and helping supervisors understand how work is distributed.',
@@ -26,7 +26,7 @@ const PROJECTS = [
     repo: null, isPrivate: true
   },
   {
-    id: 'shevault', number: '03', name: 'SheVault',
+    id: 'shevault', name: 'SheVault',
     subtitle: 'Organizing member contributions',
     category: ['web'], label: 'WEB PLATFORM', year: '2026',
     description: 'A web platform for managing group membership, recurring contributions, meetings and payment-related workflows in one clear, organized place.',
@@ -35,7 +35,7 @@ const PROJECTS = [
     repo: 'https://github.com/lakonyemma/shevault-frontend', isPrivate: false
   },
   {
-    id: 'campushub', number: '04', name: 'Campus Hub',
+    id: 'campushub', name: 'Campus Hub',
     subtitle: 'An academic companion for students',
     category: ['mobile'], label: 'MOBILE APP', year: '2026',
     description: 'An Android-first student companion focused on coursework organization, timetables, study materials and assignment progress. A contextual study assistant is part of its planned development roadmap.',
@@ -48,11 +48,11 @@ const PROJECTS = [
 const PAGE_ORDER = ['home', 'work', 'about', 'contact'];
 const PAGE_NAMES = {home: 'HOME', work: 'SELECTED WORK', about: 'ABOUT', contact: 'CONTACT'};
 const COMMANDS = [
-  {id: 'home', mark: '01', label: 'Home', hint: 'Introduction', type: 'route'},
-  {id: 'work', mark: '02', label: 'Selected work', hint: 'Projects', type: 'route'},
-  {id: 'about', mark: '03', label: 'About me', hint: 'Background & skills', type: 'route'},
-  {id: 'contact', mark: '04', label: 'Contact', hint: 'Say hello', type: 'route'},
-  {id: 'theme', mark: '◐', label: 'Switch color theme', hint: 'Light / dark', type: 'action'}
+  {id: 'home', label: 'Home', hint: 'Introduction', type: 'route'},
+  {id: 'work', label: 'Selected work', hint: 'Projects', type: 'route'},
+  {id: 'about', label: 'About me', hint: 'Background & skills', type: 'route'},
+  {id: 'contact', label: 'Contact', hint: 'Say hello', type: 'route'},
+  {id: 'theme', label: 'Switch color theme', hint: 'Light / dark', type: 'action'}
 ];
 
 const $ = (selector, root = document) => root.querySelector(selector);
@@ -86,37 +86,56 @@ function toggleTheme() {
   toast(`${document.body.dataset.theme === 'dark' ? 'Dark' : 'Light'} mode enabled`);
 }
 
+function setActivePage(page) {
+  if (!PAGE_ORDER.includes(page)) return;
+  currentPage = page;
+  $$('.nav-item').forEach(link => {
+    const active = link.dataset.route === page;
+    link.classList.toggle('is-active', active);
+    if (active) link.setAttribute('aria-current', 'page');
+    else link.removeAttribute('aria-current');
+  });
+  $('#topbar-descriptor').textContent = PAGE_NAMES[page];
+  document.title = `${PAGE_NAMES[page]} · Lakony Emmanuel`;
+}
+
 function navigate(page, saveHistory = true) {
   if (!PAGE_ORDER.includes(page)) page = 'home';
   closeCommand();
   closeModal();
-  currentPage = page;
-  $$('.screen').forEach(screen => {
-    const active = screen.dataset.screen === page;
-    screen.hidden = !active;
-    screen.classList.toggle('is-active', active);
-    if (active) screen.scrollTop = 0;
-  });
-  $$('.nav-item').forEach(button => {
-    const active = button.dataset.route === page;
-    button.classList.toggle('is-active', active);
-    if (active) button.setAttribute('aria-current', 'page');
-    else button.removeAttribute('aria-current');
-  });
-  $('#page-progress').textContent = String(PAGE_ORDER.indexOf(page) + 1).padStart(2, '0');
-  const railProgress = $('#rail-line-progress');
-  if (railProgress) railProgress.style.height = `${((PAGE_ORDER.indexOf(page) + 1) / PAGE_ORDER.length) * 100}%`;
-  $('#topbar-descriptor').textContent = `PORTFOLIO / ${PAGE_NAMES[page]}`;
-  document.title = `${PAGE_NAMES[page]} · Lakony Emmanuel`;
+  setActivePage(page);
+  const target = document.getElementById(page);
+  if (target) target.scrollIntoView({behavior: saveHistory ? 'smooth' : 'auto', block: 'start'});
   if (saveHistory && window.location.hash !== `#${page}`) {
-    // Some browsers restrict history.pushState on local file:// documents.
-    // A hash update still works offline and preserves back/forward navigation.
     try {
       history.pushState({page}, '', `#${page}`);
     } catch (_) {
       window.location.hash = page;
     }
   }
+}
+
+function observeSections() {
+  const sections = $$('.screen');
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(entries => {
+      const visible = entries
+        .filter(entry => entry.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+      if (visible) setActivePage(visible.target.id);
+    }, {root: null, rootMargin: '-18% 0px -58% 0px', threshold: [0, .15, .35, .6]});
+    sections.forEach(section => observer.observe(section));
+  } else {
+    window.addEventListener('scroll', () => {
+      const current = sections.filter(section => section.getBoundingClientRect().top < innerHeight * .45)
+        .sort((a, b) => b.getBoundingClientRect().top - a.getBoundingClientRect().top)[0];
+      if (current) setActivePage(current.id);
+    }, {passive: true});
+  }
+  const backHome = $('.back-home');
+  const updateBackHome = () => backHome?.classList.toggle('is-visible', window.scrollY > 360);
+  window.addEventListener('scroll', updateBackHome, {passive: true});
+  updateBackHome();
 }
 
 function sceneMarkup(project) {
@@ -149,7 +168,7 @@ function openModal(id) {
   lastFocusedElement = document.activeElement;
   $('#modal-content').innerHTML = `
     <div class="modal-scene">${sceneMarkup(project)}</div>
-    <div class="modal-main"><div class="modal-meta"><span>PROJECT ${project.number} / 04</span><span>${project.year} · ${project.label}</span></div>
+    <div class="modal-main"><div class="modal-meta"><span>PROJECT DETAILS</span><span>${project.year} · ${project.label}</span></div>
       <h2 id="modal-title">${project.name}<span style="color:var(--accent)">.</span></h2><p>${project.description}</p>
       <h3>WHAT IT COVERS</h3><div class="modal-points">${project.highlights.map(item => `<span>${item}</span>`).join('')}</div>
       <h3>TOOLS & TECHNOLOGIES</h3><div class="modal-tags">${project.stack.map(item => `<span>${item}</span>`).join('')}</div>
@@ -176,7 +195,7 @@ function renderCommands(filter = '') {
     root.innerHTML = '<div class="command-result-empty">No matches. Try “projects”, “contact”, or “theme”.</div>';
     return;
   }
-  root.innerHTML = commandMatches.map((item, index) => `<button type="button" class="command-result ${index === commandSelected ? 'is-highlighted' : ''}" data-command="${item.id}" data-command-index="${index}" role="option" aria-selected="${index === commandSelected}"><span class="command-result-mark">${item.mark}</span><span class="command-result-text">${item.label}</span><span class="command-result-help">${item.hint}</span></button>`).join('');
+  root.innerHTML = commandMatches.map((item, index) => `<button type="button" class="command-result ${index === commandSelected ? 'is-highlighted' : ''}" data-command="${item.id}" data-command-index="${index}" role="option" aria-selected="${index === commandSelected}"><span class="command-result-mark" aria-hidden="true">↗</span><span class="command-result-text">${item.label}</span><span class="command-result-help">${item.hint}</span></button>`).join('');
 }
 function updateCommandSelection() {
   $$('.command-result').forEach((button, index) => {
@@ -342,6 +361,7 @@ function init() {
   initTheme();
   renderProjects();
   setupEventHandlers();
+  observeSections();
   navigate(window.location.hash.slice(1) || 'home', false);
   updateClock();
   setInterval(updateClock, 60 * 1000);
