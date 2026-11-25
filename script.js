@@ -1,4 +1,4 @@
-/* Lakony Emmanuel — deliberately framework-free. Works when index.html is opened directly. */
+/* Lakony Emmanuel, framework free. Works when index.html is opened directly. */
 'use strict';
 
 // PERSONALIZE BEFORE PUBLISHING:
@@ -18,7 +18,7 @@ const PROJECTS = [
   },
   {
     id: 'workwise', name: 'Workwise',
-    subtitle: 'Intelligent task & workload management',
+    subtitle: 'Intelligent task and workload management',
     category: ['web', 'systems'], label: 'TEAM SYSTEM', year: '2026',
     description: 'An intelligent task allocation and workload management system for coordinating team responsibilities, tracking employee progress, and helping supervisors understand how work is distributed.',
     highlights: ['Supervisor and employee workflows', 'Task allocation and progress tracking', 'Workload insights and reporting', 'Role-based operational interfaces'],
@@ -172,7 +172,7 @@ function openModal(id) {
       <h2 id="modal-title">${project.name}<span style="color:var(--accent)">.</span></h2><p>${project.description}</p>
       <h3>WHAT IT COVERS</h3><div class="modal-points">${project.highlights.map(item => `<span>${item}</span>`).join('')}</div>
       <h3>TOOLS & TECHNOLOGIES</h3><div class="modal-tags">${project.stack.map(item => `<span>${item}</span>`).join('')}</div>
-      ${project.repo ? `<a class="button button-primary modal-link" href="${project.repo}" target="_blank" rel="noopener noreferrer">Explore on GitHub <span aria-hidden="true">↗</span></a>` : '<div class="button modal-link" aria-disabled="true">Private project — repository not public <span aria-hidden="true">↗</span></div>'}
+      ${project.repo ? `<a class="button button-primary modal-link" href="${project.repo}" target="_blank" rel="noopener noreferrer">Explore on GitHub <span aria-hidden="true">↗</span></a>` : '<div class="button modal-link" aria-disabled="true">Private project, repository not public <span aria-hidden="true">↗</span></div>'}
     </div>`;
   $('#project-modal').hidden = false;
   document.body.style.overflow = 'hidden';
