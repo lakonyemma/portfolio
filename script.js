@@ -104,6 +104,8 @@ function navigate(page, saveHistory = true) {
     else button.removeAttribute('aria-current');
   });
   $('#page-progress').textContent = String(PAGE_ORDER.indexOf(page) + 1).padStart(2, '0');
+  const railProgress = $('#rail-line-progress');
+  if (railProgress) railProgress.style.height = `${((PAGE_ORDER.indexOf(page) + 1) / PAGE_ORDER.length) * 100}%`;
   $('#topbar-descriptor').textContent = `PORTFOLIO / ${PAGE_NAMES[page]}`;
   document.title = `${PAGE_NAMES[page]} · Lakony Emmanuel`;
   if (saveHistory && window.location.hash !== `#${page}`) {
@@ -130,7 +132,7 @@ function sceneMarkup(project) {
 function renderProjects() {
   const shown = PROJECTS.filter(project => currentFilter === 'all' || project.category.includes(currentFilter));
   $('#projects-grid').innerHTML = shown.map(project => `
-    <button class="project-card" type="button" data-project="${project.id}" aria-label="Explore ${project.name} project details">
+    <a class="project-card" href="#work" data-project="${project.id}" aria-label="Explore ${project.name} project details">
       ${sceneMarkup(project)}
       <div class="project-info"><div><h3>${project.name}</h3><p>${project.subtitle}</p></div><span class="project-arrow" aria-hidden="true">↗</span></div>
     </button>`).join('');
@@ -274,7 +276,7 @@ function setupEventHandlers() {
       return;
     }
     const project = event.target.closest('[data-project]');
-    if (project) { openModal(project.dataset.project); return; }
+    if (project) { event.preventDefault(); openModal(project.dataset.project); return; }
     const filter = event.target.closest('[data-filter]');
     if (filter) { currentFilter = filter.dataset.filter; renderProjects(); return; }
     if (event.target.closest('[data-close-modal]') || event.target.closest('#modal-close')) closeModal();
@@ -321,6 +323,12 @@ function setupEventHandlers() {
       }
       return;
     }
+    if (!event.altKey && !event.ctrlKey && !event.metaKey && ['ArrowRight','ArrowLeft'].includes(event.key) && !['INPUT','TEXTAREA'].includes(document.activeElement.tagName)) {
+      event.preventDefault();
+      const step = event.key === 'ArrowRight' ? 1 : -1;
+      navigate(PAGE_ORDER[(PAGE_ORDER.indexOf(currentPage) + step + PAGE_ORDER.length) % PAGE_ORDER.length]);
+      return;
+    }
     // Alt + arrow keys switch sections, without hijacking normal text input behavior.
     if (event.altKey && (event.key === 'ArrowRight' || event.key === 'ArrowLeft')) {
       event.preventDefault();
@@ -338,6 +346,7 @@ function init() {
   updateClock();
   setInterval(updateClock, 60 * 1000);
   $('#copyright-year').textContent = new Date().getFullYear();
+  document.documentElement.classList.add('is-ready');
   if (CONTACT_EMAIL.trim()) {
     $('#send-label').textContent = 'Open email draft';
     $('#form-feedback').textContent = 'Your message opens in your email app; review it before sending.';
