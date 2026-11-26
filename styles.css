@@ -1832,3 +1832,22 @@ body[data-theme="light"] .screen-contact:before{
   background-position:center 42%;
   background-repeat:no-repeat;
 }
+
+
+/* Smooth continuous scrolling through the final contact section. */
+.screen{
+  animation:none!important;
+  transform:none!important;
+}
+.screen-contact{
+  overflow:visible!important;
+  isolation:isolate;
+}
+.screen-contact:before{
+  inset:0;
+  height:100%;
+  transform:none;
+}
+@media(prefers-reduced-motion:no-preference){
+  html{scroll-behavior:smooth}
+}
