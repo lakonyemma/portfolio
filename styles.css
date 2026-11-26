@@ -1916,3 +1916,11 @@ body[data-theme="light"] .screen-home {
   object-position:center;
   display:block;
 }
+
+
+/* Keep the homepage portrait space empty until a new photo is selected. */
+.hero-portrait .portrait-image {
+  min-height:clamp(280px,38vw,480px);
+  aspect-ratio:4/5;
+  background:transparent;
+}
