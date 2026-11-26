@@ -31,19 +31,7 @@ const PROJECTS = [
     ],
     preview: '<h4>Team workload</h4><div class="graph-bars"><i></i><i></i><i></i><i></i><i></i><i></i></div>'
   },
-  {
-    id: 'smarttask', name: 'Smart Task Allocation System',
-    subtitle: 'A structured approach to assigning team tasks',
-    category: ['web', 'systems'], label: 'TASK ALLOCATION SYSTEM', year: '2026',
-    description: 'A separate implementation of the intelligent task allocation concept, organized into an ASP.NET Core MVC frontend and a layered backend. The supervisor interface is implemented as a demonstration; shared authentication and complete API integration remain in development.',
-    highlights: ['Supervisor dashboard and task views', 'Team, workload and review interfaces', 'Layered backend architecture', 'Planned shared authentication and API integration'],
-    stack: ['ASP.NET Core MVC', '.NET 10', 'C#', 'Entity Framework Core', 'MySQL', 'Razor'],
-    repositories: [
-      {label:'SmartTask frontend',private:true},
-      {label:'SmartTask backend',private:true}
-    ],
-    preview: '<h4>Task allocation</h4><div class="tiny-row"><div class="tiny-card"><b></b><i></i></div><div class="tiny-card"><b></b><i></i></div><div class="tiny-card"><b></b><i></i></div></div>'
-  },
+
   {
     id: 'shevault', name: 'SheVault',
     subtitle: 'A digital workspace for group savings',
@@ -87,83 +75,13 @@ const PROJECTS = [
     repositories: [{label:'MPK Mining SARL website',url:'https://github.com/lakonyemma/mpkminingsarl'}],
     preview: '<h4>MPK MINING SARL</h4><div class="mine-dashboard"><span>GOLD · MINING · TRADE</span><b>Built on value.</b><i></i><i></i><i></i></div>'
   },
-  {
-    id: 'offlinestudent', name: 'Offline Student Management System',
-    subtitle: 'A student services app designed to work offline',
-    category: ['systems', 'mobile'], label: 'UWP DESKTOP APP', year: '2026',
-    description: 'A C# and UWP application that organizes student access to academic information and campus services without requiring an internet connection. Two repository versions explore the same student-management workflow.',
-    highlights: ['Student login and local sample records', 'Student hub and academic information', 'Fees and student service sections', 'Offline-first application flow'],
-    stack: ['C#', 'UWP', 'XAML', 'Windows'],
-    repositories: [
-      {label:'Offline Student Management System',url:'https://github.com/lakonyemma/OfflineStudentManagementSystem-'},
-      {label:'Offline Student System (alternate version)',private:true}
-    ],
-    preview: '<h4>STUDENT HUB</h4><div class="tiny-row"><div class="tiny-card"><b></b><i></i></div><div class="tiny-card"><b></b><i></i></div><div class="tiny-card"><b></b><i></i></div></div>'
-  },
-  {
-    id: 'saccoportal', name: 'SACCO Staff Management Portal',
-    subtitle: 'A staff portal for a community SACCO',
-    category: ['systems'], label: 'UWP + DATABASE APP', year: '2026',
-    description: 'A UWP and SQL Server coursework application for a community SACCO, with staff authentication and a dashboard for member services, loan services, reports and SACCO information.',
-    highlights: ['Staff login and input validation', 'SQL Server authentication', 'Member and loan service sections', 'Reports, dashboard navigation and logout'],
-    stack: ['C#', 'UWP', 'XAML', 'SQL Server'],
-    repositories: [{label:'Assignment 7 source code',url:'https://github.com/lakonyemma/Assignment-7-'}],
-    preview: '<h4>SACCO STAFF PORTAL</h4><div class="tiny-row"><div class="tiny-card"><b></b><i></i></div><div class="tiny-card"><b></b><i></i></div><div class="tiny-card"><b></b><i></i></div></div>'
-  },
-  {
-    id: 'whatsappclone', name: 'WhatsApp Interface Clone',
-    subtitle: 'A local messaging interface simulation',
-    category: ['systems', 'mobile'], label: 'UWP COURSEWORK APP', year: '2026',
-    description: 'A UWP classroom project that recreates selected messaging-interface interactions locally. It is a learning simulation and is not connected to WhatsApp or a live messaging service.',
-    highlights: ['Local account registration and sign-in', 'Contact list and conversation interface', 'Simulated replies and emoji input', 'Image picker and local theme preference'],
-    stack: ['C#', 'UWP', 'XAML', 'Local application storage'],
-    repositories: [{label:'WhatsApp Clone coursework',url:'https://github.com/lakonyemma/WhatsApp'}],
-    preview: '<h4>MESSAGES</h4><div class="vault-pills"><i></i><i></i><i></i></div>'
-  },
-  {
-    id: 'quizapplication', name: 'Quiz Application',
-    subtitle: 'A timed question-and-answer application',
-    category: ['systems'], label: 'UWP APP', year: '2026',
-    description: 'A UWP quiz application with account screens, a question bank, question navigation and a timed quiz flow.',
-    highlights: ['Login and registration screens', 'Question bank data model', 'Timed question flow', 'Score tracking'],
-    stack: ['C#', 'UWP', 'XAML'],
-    repositories: [{label:'Quiz Application repository',private:true}],
-    preview: '<h4>QUIZ SESSION</h4><div class="tiny-row"><div class="tiny-card"><b></b><i></i></div><div class="tiny-card"><b></b><i></i></div><div class="tiny-card"><b></b><i></i></div></div>'
-  },
-  {
-    id: 'databaseaccess', name: 'Database Login & Registration Apps',
-    subtitle: 'User access and registration practice projects',
-    category: ['systems'], label: 'DATABASE + UWP', year: '2026',
-    description: 'A set of small C# UWP applications exploring database-backed login, user registration and role-based navigation between administrator and user screens.',
-    highlights: ['SQL Server-backed login exercise', 'User registration form', 'Admin and user page navigation', 'Input handling and database operations'],
-    stack: ['C#', 'UWP', 'XAML', 'ADO.NET', 'SQL Server'],
-    repositories: [
-      {label:'Login using database',url:'https://github.com/lakonyemma/Login-Usingdatabase'},
-      {label:'Register user',url:'https://github.com/lakonyemma/Registeruser'},
-      {label:'Login as user UWP',private:true}
-    ],
-    preview: '<h4>USER ACCESS</h4><div class="tiny-row"><div class="tiny-card"><b></b><i></i></div><div class="tiny-card"><b></b><i></i></div></div>'
-  },
-  {
-    id: 'filepicker', name: 'File Picker Utility',
-    subtitle: 'A Windows app file-selection exercise',
-    category: ['systems'], label: 'UWP UTILITY', year: '2026',
-    description: 'A focused UWP practice application demonstrating the Windows file picker workflow, including file type filtering and opening a selected file.',
-    highlights: ['Windows FileOpenPicker integration', 'File type filtering', 'Desktop as suggested start location', 'Asynchronous file selection'],
-    stack: ['C#', 'UWP', 'XAML', 'Windows Storage APIs'],
-    repositories: [{label:'File Picking repository',private:true}],
-    preview: '<h4>CHOOSE A FILE</h4><div class="tiny-row"><div class="tiny-card"><b></b><i></i></div><div class="tiny-card"><b></b><i></i></div></div>'
-  },
-  {
-    id: 'bookmanager', name: 'Library Book Management',
-    subtitle: 'A CRUD web application for library records',
-    category: ['web', 'systems'], label: 'ASP.NET MVC APP', year: '2026',
-    description: 'An ASP.NET MVC application for managing library book records, including listing, adding, viewing, editing and deleting books.',
-    highlights: ['Library book listing', 'Add and view book details', 'Edit book records', 'Delete records with confirmation'],
-    stack: ['C#', 'ASP.NET MVC', 'Entity Framework', 'SQL Server'],
-    repositories: [{label:'Book management repository',private:true}],
-    preview: '<h4>LIBRARY CATALOGUE</h4><div class="tiny-row"><div class="tiny-card"><b></b><i></i></div><div class="tiny-card"><b></b><i></i></div><div class="tiny-card"><b></b><i></i></div></div>'
-  }
+
+
+
+
+
+
+
 ];
 
 const PAGE_ORDER = ['home', 'work', 'about', 'contact'];
