@@ -42,6 +42,15 @@ const PROJECTS = [
     highlights: ['Academic dashboard', 'Timetable and assignment tracking', 'Study workspace', 'Planned PDF-based study assistant'],
     stack: ['React Native', 'Expo', 'JavaScript', 'Android'],
     repo: 'https://github.com/lakonyemma/Campus-Hub', isPrivate: false
+  },
+  {
+    id: 'mpkminingsarl', name: 'MPK Mining SARL',
+    subtitle: 'A premium corporate presence for a mining company',
+    category: ['web'], label: 'CORPORATE WEBSITE', year: '2026',
+    description: 'A corporate website for MPK Mining SARL, designed to present the company with a clear, polished digital identity. The project focuses on a premium visual system, responsive layouts, company information and a refined gold-focused presentation.',
+    highlights: ['Premium corporate visual identity', 'Responsive page layouts', 'Gold-focused product presentation', 'Clear company and contact information'],
+    stack: ['HTML', 'CSS', 'JavaScript', 'Responsive Web Design'],
+    repo: 'https://github.com/lakonyemma/mpkminingsarl', isPrivate: false
   }
 ];
 
@@ -143,7 +152,8 @@ function sceneMarkup(project) {
     taskly: '<h4>Today’s overview</h4><div class="tiny-row"><div class="tiny-card"><b></b><i></i></div><div class="tiny-card"><b></b><i></i></div><div class="tiny-card"><b></b><i></i></div></div>',
     workwise: '<h4>Team workload</h4><div class="graph-bars"><i></i><i></i><i></i><i></i><i></i><i></i></div>',
     shevault: '<h4>Group overview</h4><div class="vault-balance">TOTAL CONTRIBUTIONS <b>···</b></div><div class="vault-pills"><i></i><i></i><i></i></div>',
-    campushub: '<h4>Your study space</h4><div class="campus-timetable"><i></i><i></i><i></i></div>'
+    campushub: '<h4>Your study space</h4><div class="campus-timetable"><i></i><i></i><i></i></div>',
+    mpkminingsarl: '<h4>MPK MINING SARL</h4><div class="mine-dashboard"><span>GOLD · MINING · TRADE</span><b>Built on value.</b><i></i><i></i><i></i></div>'
   };
   return `<div class="project-scene ${project.id}" aria-hidden="true"><div class="scene-window ${project.id}"><div class="scene-top"><i></i><i></i><i></i><strong>${project.name.toUpperCase()}</strong></div><div class="scene-ui">${inner[project.id]}</div></div><span class="scene-sticker">${project.label}</span></div>`;
 }
