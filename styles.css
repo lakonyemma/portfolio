@@ -1924,3 +1924,30 @@ body[data-theme="light"] .screen-home {
   aspect-ratio:4/5;
   background:transparent;
 }
+
+
+/* Keep the portrait frame in place while its image area stays empty. */
+.hero-portrait {
+  padding:0 22px 24px 0;
+  width:min(100%,440px);
+}
+.hero-portrait .portrait-frame {
+  padding:12px;
+  border:1px solid var(--line);
+  background:linear-gradient(145deg,color-mix(in srgb,var(--panel) 95%,var(--accent)),var(--panel));
+  box-shadow:0 28px 80px var(--shadow);
+}
+.hero-portrait .portrait-image {
+  display:block;
+  width:100%;
+  aspect-ratio:4/5;
+  min-height:0;
+  border:1px solid color-mix(in srgb,var(--accent) 24%,var(--line));
+  background:#090e0b;
+  overflow:hidden;
+}
+.hero-portrait .portrait-image:before,
+.hero-portrait .portrait-image:after {
+  display:none;
+  content:none;
+}
