@@ -154,7 +154,20 @@ function navigate(page, saveHistory = true) {
   }
 }
 
+function updateScrollProgress() {
+  const bar = $('#scroll-progress');
+  const fill = $('#scroll-progress-fill');
+  if (!bar || !fill) return;
+  const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = scrollable > 0 ? Math.min(100, Math.max(0, (window.scrollY / scrollable) * 100)) : 0;
+  fill.style.width = progress + '%';
+  bar.setAttribute('aria-valuenow', String(Math.round(progress)));
+}
+
 function observeSections() {
+  window.addEventListener('scroll', updateScrollProgress, {passive: true});
+  window.addEventListener('resize', updateScrollProgress);
+  updateScrollProgress();
   const sections = $$('.screen');
   if ('IntersectionObserver' in window) {
     const observer = new IntersectionObserver(entries => {
