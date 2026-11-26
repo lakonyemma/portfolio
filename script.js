@@ -165,25 +165,43 @@ function updateScrollProgress() {
 }
 
 function observeSections() {
-  window.addEventListener('scroll', updateScrollProgress, {passive: true});
-  window.addEventListener('resize', updateScrollProgress);
-  updateScrollProgress();
   const sections = $$('.screen');
-  if ('IntersectionObserver' in window) {
-    const observer = new IntersectionObserver(entries => {
-      const visible = entries
-        .filter(entry => entry.isIntersecting)
-        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-      if (visible) setActivePage(visible.target.id);
-    }, {root: null, rootMargin: '-18% 0px -58% 0px', threshold: [0, .15, .35, .6]});
-    sections.forEach(section => observer.observe(section));
-  } else {
-    window.addEventListener('scroll', () => {
-      const current = sections.filter(section => section.getBoundingClientRect().top < innerHeight * .45)
-        .sort((a, b) => b.getBoundingClientRect().top - a.getBoundingClientRect().top)[0];
-      if (current) setActivePage(current.id);
-    }, {passive: true});
-  }
+  let scrollFrame = 0;
+
+  const updateCurrentSection = () => {
+    scrollFrame = 0;
+    if (!sections.length) return;
+
+    // Use a consistent line in the viewport to decide which section is active.
+    // This avoids stale highlights caused by IntersectionObserver entry batches.
+    const activationLine = Math.min(window.innerHeight * 0.38, 320);
+    let current = sections[0];
+
+    for (const section of sections) {
+      if (section.getBoundingClientRect().top <= activationLine) current = section;
+      else break;
+    }
+
+    // Keep the final section active when the page reaches its bottom.
+    const atPageBottom = window.scrollY + window.innerHeight >=
+      document.documentElement.scrollHeight - 2;
+    if (atPageBottom) current = sections[sections.length - 1];
+
+    if (current && current.id !== currentPage) setActivePage(current.id);
+  };
+
+  const handleScroll = () => {
+    updateScrollProgress();
+    if (!scrollFrame) {
+      scrollFrame = window.requestAnimationFrame(updateCurrentSection);
+    }
+  };
+
+  window.addEventListener('scroll', handleScroll, {passive: true});
+  window.addEventListener('resize', handleScroll);
+  updateScrollProgress();
+  updateCurrentSection();
+
   const backHome = $('.back-home');
   const updateBackHome = () => backHome?.classList.toggle('is-visible', window.scrollY > 360);
   window.addEventListener('scroll', updateBackHome, {passive: true});
