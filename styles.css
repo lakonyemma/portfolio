@@ -659,18 +659,18 @@ body[data-theme="dark"] {
   --accent-ink: #15130e;
 }
 body[data-theme="light"] {
-  --bg: #f3f1eb;
-  --panel: #fffefa;
-  --panel-lift: #e9e4d8;
+  --bg: #EAE8E1;
+  --panel: #F1EFE9;
+  --panel-lift: #DDDAD1;
   --fg: #20201d;
-  --muted: #77746b;
-  --line: #ded7c7;
-  --line-soft: #ebe6dc;
-  --art: #ebe7dd;
+  --muted: #716f67;
+  --line: #D2CEC3;
+  --line-soft: #DEDAD0;
+  --art: #E1DED5;
   --outline: #20201d;
-  --shadow: rgba(43,37,24,.12);
-  --accent: #9b7837;
-  --accent-ink: #fffdf8;
+  --shadow: rgba(43,37,24,.10);
+  --accent: #927238;
+  --accent-ink: #F7F5EF;
 }
 body { letter-spacing: -.012em; }
 h1,h2,h3,h4,.brand-mark,.section-title,.about-name {
