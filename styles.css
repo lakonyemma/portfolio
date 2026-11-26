@@ -1478,3 +1478,102 @@ body[data-theme=light] .portrait-placeholder {
 @media(prefers-reduced-motion:reduce) {
   .home-featured-visual .spotlight-window { transform:none; }
 }
+
+
+/* Dedicated aerospace feature */
+.aerospace-feature {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 290px;
+  margin-top: clamp(28px, 5vh, 54px);
+  padding: clamp(27px, 4vw, 48px);
+  display: flex;
+  align-items: center;
+  border: 1px solid rgba(255,255,255,.13);
+  border-radius: 16px;
+  color: #f7f8fa;
+  background-color: #080d13;
+  background-image: url("https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=2000&q=85");
+  background-size: cover;
+  background-position: center 48%;
+}
+.aerospace-feature-shade {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(90deg, rgba(4,9,15,.96) 0%, rgba(4,9,15,.84) 43%, rgba(4,9,15,.28) 100%),
+              linear-gradient(0deg, rgba(4,9,15,.38), transparent 70%);
+}
+.aerospace-feature-content { position: relative; z-index: 1; max-width: 610px; }
+.aerospace-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: rgba(255,255,255,.72);
+  font-size: 9px;
+  font-weight: 850;
+  letter-spacing: .2em;
+}
+.aerospace-kicker span {
+  display: inline-block;
+  width: 23px;
+  height: 2px;
+  border-radius: 4px;
+  background: #b7d5ce;
+}
+.aerospace-feature h3 {
+  margin: 17px 0 13px;
+  color: #fff;
+  font-family: Manrope, sans-serif;
+  font-size: clamp(30px, 4.2vw, 49px);
+  font-weight: 800;
+  line-height: .98;
+  letter-spacing: -.065em;
+}
+.aerospace-feature h3 em { color: #b7d5ce; font-style: normal; }
+.aerospace-feature-content p {
+  max-width: 590px;
+  margin: 0;
+  color: rgba(255,255,255,.82);
+  font-size: 13px;
+  line-height: 1.85;
+}
+.aerospace-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 21px;
+}
+.aerospace-tags span {
+  padding: 7px 10px;
+  border: 1px solid rgba(255,255,255,.24);
+  border-radius: 5px;
+  background: rgba(8,15,21,.42);
+  color: rgba(255,255,255,.88);
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: .12em;
+}
+.aerospace-index {
+  position: absolute;
+  right: 23px;
+  top: 22px;
+  color: rgba(255,255,255,.68);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .16em;
+}
+@media (max-width: 640px) {
+  .aerospace-feature {
+    min-height: 340px;
+    padding: 25px 21px;
+    background-position: 58% center;
+  }
+  .aerospace-feature-shade {
+    background: linear-gradient(90deg, rgba(4,9,15,.94), rgba(4,9,15,.68)),
+                linear-gradient(0deg, rgba(4,9,15,.45), transparent);
+  }
+  .aerospace-feature-content p { font-size: 12px; line-height: 1.75; }
+  .aerospace-index { right: 16px; top: 16px; }
+}
