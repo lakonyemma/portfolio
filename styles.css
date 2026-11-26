@@ -1863,3 +1863,24 @@ body[data-theme="light"] .screen-contact:before{
   display: none !important;
   content: none !important;
 }
+
+
+/* Homepage backdrop: a subtle software workspace under the emerald theme. */
+.screen-home {
+  position:relative;
+  isolation:isolate;
+  background-image:
+    linear-gradient(90deg,rgba(12,17,14,.96) 0%,rgba(12,17,14,.88) 48%,rgba(12,17,14,.68) 100%),
+    url("https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=2200&q=85");
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+}
+body[data-theme="light"] .screen-home {
+  background-image:
+    linear-gradient(90deg,rgba(241,242,233,.96) 0%,rgba(241,242,233,.9) 48%,rgba(241,242,233,.76) 100%),
+    url("https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=2200&q=85");
+}
+@media(max-width:690px) {
+  .screen-home { background-position:58% center; }
+}
