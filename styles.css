@@ -2017,26 +2017,28 @@ body[data-theme="light"] .screen-work {
 
 
 
-/* Restore the homepage software workspace image beneath its emerald overlays. */
+/* Homepage: visible developer workspace with a dark emerald cinematic overlay. */
 .screen-home {
   background-image:
-    linear-gradient(90deg,rgba(8,14,11,.94) 0%,rgba(8,14,11,.86) 48%,rgba(8,14,11,.70) 100%),
-    linear-gradient(180deg,rgba(8,14,11,.18) 0%,rgba(8,14,11,.38) 100%),
+    linear-gradient(90deg,rgba(7,13,10,.86) 0%,rgba(7,13,10,.73) 46%,rgba(7,13,10,.54) 100%),
+    linear-gradient(180deg,rgba(7,13,10,.12) 0%,rgba(7,13,10,.30) 62%,rgba(7,13,10,.76) 100%),
     url("https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=2200&q=85") !important;
+  background-color:#090e0b !important;
   background-size:cover !important;
-  background-position:center !important;
+  background-position:center 52% !important;
   background-repeat:no-repeat !important;
 }
 body[data-theme="light"] .screen-home {
   background-image:
-    linear-gradient(90deg,rgba(231,237,230,.94) 0%,rgba(231,237,230,.88) 48%,rgba(231,237,230,.76) 100%),
-    linear-gradient(180deg,rgba(231,237,230,.14) 0%,rgba(231,237,230,.42) 100%),
+    linear-gradient(90deg,rgba(224,233,224,.91) 0%,rgba(224,233,224,.83) 46%,rgba(224,233,224,.70) 100%),
+    linear-gradient(180deg,rgba(224,233,224,.08) 0%,rgba(224,233,224,.24) 62%,rgba(224,233,224,.78) 100%),
     url("https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=2200&q=85") !important;
+  background-color:#e5ebe4 !important;
   background-size:cover !important;
-  background-position:center !important;
+  background-position:center 52% !important;
   background-repeat:no-repeat !important;
 }
 @media(max-width:690px) {
-  .screen-home { background-position:58% center !important; }
-  body[data-theme="light"] .screen-home { background-position:58% center !important; }
+  .screen-home { background-position:62% center !important; }
+  body[data-theme="light"] .screen-home { background-position:62% center !important; }
 }
