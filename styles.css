@@ -1787,3 +1787,48 @@ body[data-theme="light"] .screen-about .about-decor{
   background-repeat:no-repeat;
 }
 .nav-index{display:none!important}
+
+
+/* Contact page: a subtle development workspace behind the invitation. */
+.screen-contact{
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  min-height:100%;
+}
+.screen-contact:before{
+  content:"";
+  position:absolute;
+  z-index:-1;
+  inset:0;
+  pointer-events:none;
+  background:
+    linear-gradient(90deg,rgba(10,12,14,.96) 0%,rgba(10,12,14,.88) 48%,rgba(10,12,14,.72) 100%),
+    linear-gradient(180deg,rgba(10,12,14,.40) 0%,rgba(10,12,14,.72) 70%,var(--bg) 100%),
+    url("https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=2200&q=85");
+  background-size:cover;
+  background-position:center 42%;
+  background-repeat:no-repeat;
+  opacity:.92;
+}
+.screen-contact .section-heading-row,
+.screen-contact .contact-grid,
+.screen-contact .contact-footer{
+  position:relative;
+  z-index:1;
+}
+.screen-contact .contact-form{
+  background:color-mix(in srgb,var(--panel) 91%,transparent);
+  border-color:color-mix(in srgb,var(--accent) 30%,var(--line));
+  box-shadow:0 24px 70px rgba(0,0,0,.24);
+  backdrop-filter:blur(12px);
+}
+body[data-theme="light"] .screen-contact:before{
+  background:
+    linear-gradient(90deg,rgba(17,20,18,.88) 0%,rgba(17,20,18,.78) 52%,rgba(17,20,18,.66) 100%),
+    linear-gradient(180deg,rgba(17,20,18,.28) 0%,rgba(17,20,18,.58) 70%,var(--bg) 100%),
+    url("https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=2200&q=85");
+  background-size:cover;
+  background-position:center 42%;
+  background-repeat:no-repeat;
+}
