@@ -49,11 +49,19 @@
     <aside class="rail" aria-label="Website navigation">
       <a class="brand-mark" href="#home" data-route="home" aria-label="Lakony Emmanuel, home">LE<span class="brand-dot">.</span></a>
       <nav class="rail-nav" aria-label="Main">
-        <span class="rail-nav-heading" aria-hidden="true">EXPLORE <span>↘</span></span>
-        <a class="nav-item is-active" href="#home" data-route="home" aria-current="page" title="Home"><span class="nav-text">Home</span></a>
-        <a class="nav-item" href="#work" data-route="work" title="Projects"><span class="nav-text">Work</span></a>
-        <a class="nav-item" href="#about" data-route="about" title="About"><span class="nav-text">About</span></a>
-        <a class="nav-item" href="#contact" data-route="contact" title="Contact"><span class="nav-text">Contact</span></a>
+        <span class="rail-nav-heading" aria-hidden="true">NAVIGATION</span>
+        <a class="nav-item is-active" href="#home" data-route="home" data-label="Home" aria-current="page" title="Home">
+          <span class="nav-index">01</span><svg class="nav-glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 10 9-7 9 7"/><path d="M5 9v11h14V9M9 20v-7h6v7"/></svg><span class="nav-text">Home</span>
+        </a>
+        <a class="nav-item" href="#work" data-route="work" data-label="Selected work" title="Projects">
+          <span class="nav-index">02</span><svg class="nav-glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M9 9v11"/></svg><span class="nav-text">Work</span>
+        </a>
+        <a class="nav-item" href="#about" data-route="about" data-label="About" title="About">
+          <span class="nav-index">03</span><svg class="nav-glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c.8-3.5 3.1-5.2 7-5.2s6.2 1.7 7 5.2"/></svg><span class="nav-text">About</span>
+        </a>
+        <a class="nav-item" href="#contact" data-route="contact" data-label="Contact" title="Contact">
+          <span class="nav-index">04</span><svg class="nav-glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v14H4z"/><path d="m4 7 8 6 8-6"/></svg><span class="nav-text">Contact</span>
+        </a>
       </nav>
       <div class="rail-bottom">
         <span class="rail-line" aria-hidden="true"><span class="rail-line-progress" id="rail-line-progress"></span></span>
