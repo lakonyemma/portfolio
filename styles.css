@@ -925,3 +925,43 @@ h1,h2,h3,h4,.brand-mark,.section-title,.about-name {
   .project-card, .project-card::after, .project-arrow, .project-info h3 { transition:none; }
   .project-card:hover, .project-card:focus-visible { transform:none; }
 }
+
+
+/* Repository links in project detail panels */
+.modal-repositories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 12px;
+}
+.modal-repository-link,
+.modal-repository-private {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 38px;
+  padding: 9px 12px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  color: var(--fg);
+  font-size: 11px;
+  font-weight: 750;
+  transition: border-color .2s, color .2s, background .2s;
+}
+.modal-repository-link:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: var(--panel);
+}
+.modal-repository-link span { color: var(--accent); }
+.modal-repository-private {
+  color: var(--muted);
+  border-style: dashed;
+  cursor: default;
+}
+.modal-private-note {
+  color: var(--muted);
+  font-size: 12px;
+  border-left: 2px solid var(--accent);
+  padding-left: 12px;
+}
