@@ -2014,3 +2014,29 @@ body[data-theme="light"] .screen-work {
   .screen-work { background-position:58% top; }
   body[data-theme="light"] .screen-work { background-position:58% top; }
 }
+
+
+
+/* Restore the homepage software workspace image beneath its emerald overlays. */
+.screen-home {
+  background-image:
+    linear-gradient(90deg,rgba(8,14,11,.94) 0%,rgba(8,14,11,.86) 48%,rgba(8,14,11,.70) 100%),
+    linear-gradient(180deg,rgba(8,14,11,.18) 0%,rgba(8,14,11,.38) 100%),
+    url("https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=2200&q=85") !important;
+  background-size:cover !important;
+  background-position:center !important;
+  background-repeat:no-repeat !important;
+}
+body[data-theme="light"] .screen-home {
+  background-image:
+    linear-gradient(90deg,rgba(231,237,230,.94) 0%,rgba(231,237,230,.88) 48%,rgba(231,237,230,.76) 100%),
+    linear-gradient(180deg,rgba(231,237,230,.14) 0%,rgba(231,237,230,.42) 100%),
+    url("https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=2200&q=85") !important;
+  background-size:cover !important;
+  background-position:center !important;
+  background-repeat:no-repeat !important;
+}
+@media(max-width:690px) {
+  .screen-home { background-position:58% center !important; }
+  body[data-theme="light"] .screen-home { background-position:58% center !important; }
+}
