@@ -1951,3 +1951,36 @@ body[data-theme="light"] .screen-home {
   display:none;
   content:none;
 }
+
+
+/* Keep desktop navigation fixed while the document scrolls. */
+@media (min-width:861px) {
+  .app-shell {
+    display:grid;
+    grid-template-columns:88px minmax(0,1fr);
+  }
+  .rail {
+    position:fixed!important;
+    inset:0 auto 0 0!important;
+    grid-column:1;
+    grid-row:1;
+    width:88px;
+    height:100vh;
+    height:100dvh;
+    min-height:100vh;
+    align-self:stretch;
+    z-index:100;
+  }
+  .main-panel {
+    grid-column:2;
+    min-width:0;
+  }
+}
+@media (min-width:861px) and (max-width:1080px) {
+  .app-shell {
+    grid-template-columns:78px minmax(0,1fr);
+  }
+  .rail {
+    width:78px;
+  }
+}
