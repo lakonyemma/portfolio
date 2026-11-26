@@ -2042,3 +2042,32 @@ body[data-theme="light"] .screen-home {
   .screen-home { background-position:62% center !important; }
   body[data-theme="light"] .screen-home { background-position:62% center !important; }
 }
+
+
+/* Selected Work cards now blend with the section backdrop. */
+.screen-work .project-card {
+  background:rgba(10,16,12,.76);
+  border-color:rgba(112,151,126,.24);
+  box-shadow:0 12px 34px rgba(0,0,0,.16);
+  backdrop-filter:blur(10px);
+}
+.screen-work .project-info {
+  background:transparent;
+}
+.screen-work .project-card:hover,
+.screen-work .project-card:focus-visible {
+  background:rgba(13,24,17,.88);
+  border-color:color-mix(in srgb,var(--accent) 48%,rgba(112,151,126,.24));
+  box-shadow:0 20px 48px rgba(0,0,0,.24);
+}
+body[data-theme="light"] .screen-work .project-card {
+  background:rgba(244,247,240,.84);
+  border-color:rgba(72,104,79,.22);
+  box-shadow:0 12px 34px rgba(32,42,32,.09);
+}
+body[data-theme="light"] .screen-work .project-card:hover,
+body[data-theme="light"] .screen-work .project-card:focus-visible {
+  background:rgba(250,252,247,.94);
+  border-color:color-mix(in srgb,var(--accent) 48%,rgba(72,104,79,.22));
+  box-shadow:0 20px 48px rgba(32,42,32,.14);
+}
