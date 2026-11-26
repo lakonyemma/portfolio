@@ -10,9 +10,9 @@ const PROJECTS = [
   {
     id: 'taskly', name: 'Taskly',
     subtitle: 'A smarter way to get work done',
-    category: ['web', 'systems'], label: 'FULL-STACK WEB APP', year: '2026',
+    category: ['web', 'systems'], label: 'FULL STACK WEB APP', year: '2026',
     description: 'A task and team management platform for organizing projects, people, deadlines and everyday work. It brings together collaborative workspaces, task tracking, notifications and productivity reporting.',
-    highlights: ['Task and workspace management', 'Team collaboration and roles', 'Reminders and notifications', 'Offline-first productivity tools'],
+    highlights: ['Task and workspace management', 'Team collaboration and roles', 'Reminders and notifications', 'Offline first productivity tools'],
     stack: ['React', 'TypeScript', 'Node.js', 'Express', 'PostgreSQL', 'Prisma'],
     repositories: [{label:'Taskly source code',url:'https://github.com/lakonyemma/TaskManager'}],
     preview: '<h4>Today’s overview</h4><div class="tiny-row"><div class="tiny-card"><b></b><i></i></div><div class="tiny-card"><b></b><i></i></div><div class="tiny-card"><b></b><i></i></div></div>'
@@ -21,7 +21,7 @@ const PROJECTS = [
     id: 'workwise', name: 'Workwise',
     subtitle: 'Intelligent task and workload management',
     category: ['web', 'systems'], label: 'TEAM MANAGEMENT SYSTEM', year: '2026',
-    description: 'A role-based task allocation and workload management system for Khan Associates. It is being developed across separate frontend and backend repositories, with a public ASP.NET Core implementation and additional private coursework components.',
+    description: 'A role based task allocation and workload management system for Khan Associates. It is being developed across separate frontend and backend repositories, with a public ASP.NET Core implementation and additional private coursework components.',
     highlights: ['Admin, supervisor and employee workflows', 'Task creation, allocation and progress tracking', 'Workload dashboards and reporting', 'Separate frontend and backend architecture'],
     stack: ['ASP.NET Core MVC', 'C#', 'Entity Framework Core', 'MySQL', 'HTML', 'CSS', 'JavaScript'],
     repositories: [
@@ -35,8 +35,8 @@ const PROJECTS = [
   {
     id: 'shevault', name: 'SheVault',
     subtitle: 'A digital workspace for group savings',
-    category: ['web', 'systems'], label: 'FULL-STACK WEB PLATFORM', year: '2026',
-    description: 'A savings-group management platform covering members, recurring contribution cycles, meetings, notifications and mobile-money collection workflows. The frontend and REST API are maintained in separate repositories.',
+    category: ['web', 'systems'], label: 'FULL STACK WEB PLATFORM', year: '2026',
+    description: 'A savings group management platform covering members, recurring contribution cycles, meetings, notifications and mobile money collection workflows. The frontend and REST API are maintained in separate repositories.',
     highlights: ['Member and group management', 'Weekly contribution ledger and reports', 'Meetings, attendance and notifications', 'Mobile Money collection integration layer and audit trail'],
     stack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Django', 'Django REST Framework', 'PostgreSQL', 'Redis'],
     repositories: [
@@ -49,7 +49,7 @@ const PROJECTS = [
     id: 'campushub', name: 'Campus Hub',
     subtitle: 'An academic companion for students',
     category: ['mobile'], label: 'ANDROID APP', year: '2026',
-    description: 'An Android-first student companion focused on academic organization, timetables, assignment progress and study materials. Its roadmap includes a contextual assistant that can work with selected course PDFs.',
+    description: 'An Android first student companion focused on academic organization, timetables, assignment progress and study materials. Its roadmap includes a contextual assistant that can work with selected course PDFs.',
     highlights: ['Academic dashboard and timetable', 'Assignment progress tracking', 'Study workspace and PDF selection', 'Contextual study assistant roadmap'],
     stack: ['React Native', 'Expo', 'JavaScript', 'Android'],
     repositories: [{label:'Campus Hub source code',url:'https://github.com/lakonyemma/Campus-Hub'}],
@@ -60,7 +60,7 @@ const PROJECTS = [
     subtitle: 'An Android workspace for everyday operations',
     category: ['mobile', 'systems'], label: 'ANDROID PRODUCTIVITY APP', year: '2026',
     description: 'A custom Android command center that brings together a dashboard, local tasks, notifications and dedicated spaces for calendar, inbox, developer tools, devices and finance planning. External services remain integration surfaces until authorized connections are configured.',
-    highlights: ['Unified dashboard and Control Center', 'Offline-first tasks and notifications', 'Calendar, inbox and developer workspaces', 'Finance planning and integration surfaces'],
+    highlights: ['Unified dashboard and Control Center', 'Offline first tasks and notifications', 'Calendar, inbox and developer workspaces', 'Finance planning and integration surfaces'],
     stack: ['Kotlin', 'Jetpack Compose', 'Android', 'Gradle'],
     repositories: [{label:'Command Center source code',url:'https://github.com/lakonyemma/Command-center'}],
     preview: '<h4>CONTROL CENTER</h4><div class="tiny-row"><div class="tiny-card"><b></b><i></i></div><div class="tiny-card"><b></b><i></i></div><div class="tiny-card"><b></b><i></i></div></div>'
@@ -69,8 +69,8 @@ const PROJECTS = [
     id: 'mpkminingsarl', name: 'MPK Mining SARL',
     subtitle: 'A corporate website for a mining company',
     category: ['web'], label: 'CORPORATE WEBSITE', year: '2026',
-    description: 'A responsive corporate website for MPK Mining SARL, presenting its company profile, mining and mineral-processing focus, and buyer enquiry information through a gold-led visual identity.',
-    highlights: ['Responsive corporate website', 'Company and service information', 'Seven-language interface', 'Buyer enquiry email flow'],
+    description: 'A responsive corporate website for MPK Mining SARL, presenting its company profile, mining and mineral processing focus, and buyer enquiry information through a gold-led visual identity.',
+    highlights: ['Responsive corporate website', 'Company and service information', 'Seven language interface', 'Buyer enquiry email flow'],
     stack: ['HTML', 'CSS', 'JavaScript', 'Responsive Web Design'],
     repositories: [{label:'MPK Mining SARL website',url:'https://github.com/lakonyemma/mpkminingsarl'}],
     preview: '<h4>MPK MINING SARL</h4><div class="mine-dashboard"><span>GOLD · MINING · TRADE</span><b>Built on value.</b><i></i><i></i><i></i></div>'
