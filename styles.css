@@ -1602,3 +1602,164 @@ body[data-theme=light] .portrait-placeholder {
 @media (prefers-reduced-motion: reduce) {
   #scroll-progress-fill { transition: none; }
 }
+
+
+/* Architectural navigation: a quiet floating rail with a vertical wayfinding spine. */
+@media (min-width:861px){
+  .app-shell{grid-template-columns:88px minmax(0,1fr)}
+  .rail{
+    align-items:center;
+    padding:0;
+    background:linear-gradient(180deg, color-mix(in srgb,var(--panel) 42%,var(--bg)),var(--bg) 48%);
+    border-right:1px solid color-mix(in srgb,var(--line) 72%,transparent);
+    box-shadow:8px 0 34px rgba(0,0,0,.045);
+  }
+  .brand-mark{height:94px;justify-content:center;padding:0;font-size:24px}
+  .rail-nav{
+    position:relative;
+    flex:1;
+    width:100%;
+    align-items:center;
+    justify-content:center;
+    gap:27px;
+    padding:24px 0;
+  }
+  .rail-nav:before{
+    content:"";
+    position:absolute;
+    top:calc(50% - 112px);
+    bottom:calc(50% - 112px);
+    left:50%;
+    width:1px;
+    background:linear-gradient(180deg,transparent,var(--line) 12%,var(--line) 88%,transparent);
+    transform:translateX(-50%);
+    pointer-events:none;
+  }
+  .rail-nav-heading{display:none}
+  .nav-item{
+    z-index:1;
+    position:relative;
+    width:46px;
+    min-height:58px;
+    padding:7px 0;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:5px;
+    border:0;
+    border-radius:0;
+    background:transparent;
+    color:var(--muted);
+    opacity:1;
+    writing-mode:initial;
+    transform:none;
+    transition:color .25s ease,transform .3s var(--ease);
+  }
+  .nav-item:hover{color:var(--fg);transform:translateX(2px)}
+  .nav-item.is-active{color:var(--accent);background:transparent;box-shadow:none}
+  .nav-item.is-active:after{
+    content:"";
+    position:absolute;
+    left:50%;
+    right:auto;
+    top:50%;
+    width:34px;
+    height:34px;
+    border:1px solid color-mix(in srgb,var(--accent) 55%,transparent);
+    border-radius:50%;
+    background:color-mix(in srgb,var(--accent) 9%,var(--bg));
+    transform:translate(-50%,-50%);
+    z-index:-1;
+  }
+  .nav-index{font:700 8px/1 Inter,"Segoe UI",sans-serif;letter-spacing:.12em;color:var(--muted);transition:color .2s}
+  .nav-item.is-active .nav-index{color:var(--accent)}
+  .nav-glyph{width:17px;height:17px;flex:none}
+  .nav-text{
+    position:absolute;
+    left:calc(100% + 18px);
+    top:50%;
+    z-index:10;
+    width:max-content;
+    padding:9px 12px;
+    border:1px solid var(--line);
+    border-radius:5px;
+    background:var(--panel);
+    color:var(--fg);
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:.02em;
+    box-shadow:0 10px 30px rgba(0,0,0,.16);
+    opacity:0;
+    visibility:hidden;
+    transform:translate(-5px,-50%);
+    transition:opacity .2s,transform .2s,visibility .2s;
+    pointer-events:none;
+  }
+  .nav-item:hover .nav-text,.nav-item:focus-visible .nav-text{
+    opacity:1;
+    visibility:visible;
+    transform:translate(0,-50%);
+  }
+  .nav-item.is-active .nav-text{color:var(--accent)}
+  .rail-bottom{gap:19px;padding-bottom:25px}
+  .rail-line{height:42px;width:1px;background:linear-gradient(180deg,transparent,var(--line),transparent)}
+  .rail-vertical{display:none}
+  .theme-button{width:38px;height:38px;border-color:var(--line);background:transparent}
+  .theme-button:hover{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 9%,var(--bg))}
+}
+@media (min-width:861px) and (max-width:1080px){
+  .app-shell{grid-template-columns:78px minmax(0,1fr)}
+  .nav-item{width:42px}
+}
+@media (max-width:860px){
+  .app-shell{grid-template-rows:minmax(0,1fr) 72px}
+  .rail{
+    position:relative;
+    z-index:15;
+    width:max-content;
+    min-width:min(340px,calc(100vw - 28px));
+    height:58px;
+    justify-self:center;
+    align-self:center;
+    padding:4px 9px;
+    border:1px solid var(--nav-outline,var(--line));
+    border-radius:18px;
+    background:color-mix(in srgb,var(--panel) 92%,transparent);
+    box-shadow:0 12px 35px rgba(0,0,0,.22);
+    backdrop-filter:blur(18px);
+  }
+  .rail-nav{width:100%;gap:5px;justify-content:space-around;align-items:center}
+  .rail-nav-heading,.brand-mark,.rail-bottom{display:none}
+  .nav-item{
+    position:relative;
+    flex:1;
+    min-width:52px;
+    min-height:46px;
+    padding:5px 7px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:3px;
+    border:1px solid transparent;
+    border-radius:12px;
+    background:transparent;
+    color:var(--muted);
+    opacity:1;
+    writing-mode:initial;
+    transform:none;
+    font-size:9px;
+    font-weight:750;
+    letter-spacing:.03em;
+  }
+  .nav-item.is-active{color:var(--accent);background:color-mix(in srgb,var(--accent) 10%,var(--panel));border-color:color-mix(in srgb,var(--accent) 26%,transparent)}
+  .nav-item:after{display:none}
+  .nav-index{display:none}
+  .nav-glyph{width:17px;height:17px}
+  .nav-text{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:0;background:transparent;padding:0;color:inherit;font-size:9px;pointer-events:auto}
+}
+@media (max-width:400px){
+  .rail{min-width:calc(100vw - 20px);padding-left:5px;padding-right:5px}
+  .nav-item{min-width:0}
+}
