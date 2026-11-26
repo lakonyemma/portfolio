@@ -11,46 +11,158 @@ const PROJECTS = [
     id: 'taskly', name: 'Taskly',
     subtitle: 'A smarter way to get work done',
     category: ['web', 'systems'], label: 'FULL-STACK WEB APP', year: '2026',
-    description: 'A task and team management platform designed around the realities of getting things done: projects, people, deadlines and the details in between. Built to support both individual focus and collaborative workflows.',
+    description: 'A task and team management platform for organizing projects, people, deadlines and everyday work. It brings together collaborative workspaces, task tracking, notifications and productivity reporting.',
     highlights: ['Task and workspace management', 'Team collaboration and roles', 'Reminders and notifications', 'Offline-first productivity tools'],
     stack: ['React', 'TypeScript', 'Node.js', 'Express', 'PostgreSQL', 'Prisma'],
-    repo: 'https://github.com/lakonyemma/TaskManager', isPrivate: false
+    repositories: [{label:'Taskly source code',url:'https://github.com/lakonyemma/TaskManager'}],
+    preview: '<h4>Today’s overview</h4><div class="tiny-row"><div class="tiny-card"><b></b><i></i></div><div class="tiny-card"><b></b><i></i></div><div class="tiny-card"><b></b><i></i></div></div>'
   },
   {
     id: 'workwise', name: 'Workwise',
     subtitle: 'Intelligent task and workload management',
-    category: ['web', 'systems'], label: 'TEAM SYSTEM', year: '2026',
-    description: 'An intelligent task allocation and workload management system for coordinating team responsibilities, tracking employee progress, and helping supervisors understand how work is distributed.',
-    highlights: ['Supervisor and employee workflows', 'Task allocation and progress tracking', 'Workload insights and reporting', 'Role-based operational interfaces'],
-    stack: ['HTML', 'CSS', 'JavaScript', 'ASP.NET MVC 5', 'MySQL'],
-    repo: null, isPrivate: true
+    category: ['web', 'systems'], label: 'TEAM MANAGEMENT SYSTEM', year: '2026',
+    description: 'A role-based task allocation and workload management system for Khan Associates. It is being developed across separate frontend and backend repositories, with a public ASP.NET Core implementation and additional private coursework components.',
+    highlights: ['Admin, supervisor and employee workflows', 'Task creation, allocation and progress tracking', 'Workload dashboards and reporting', 'Separate frontend and backend architecture'],
+    stack: ['ASP.NET Core MVC', 'C#', 'Entity Framework Core', 'MySQL', 'HTML', 'CSS', 'JavaScript'],
+    repositories: [
+      {label:'Public Workwise implementation',url:'https://github.com/lakonyemma/New'},
+      {label:'Workwise frontend',private:true},
+      {label:'Workwise backend',private:true}
+    ],
+    preview: '<h4>Team workload</h4><div class="graph-bars"><i></i><i></i><i></i><i></i><i></i><i></i></div>'
+  },
+  {
+    id: 'smarttask', name: 'Smart Task Allocation System',
+    subtitle: 'A structured approach to assigning team tasks',
+    category: ['web', 'systems'], label: 'TASK ALLOCATION SYSTEM', year: '2026',
+    description: 'A separate implementation of the intelligent task allocation concept, organized into an ASP.NET Core MVC frontend and a layered backend. The supervisor interface is implemented as a demonstration; shared authentication and complete API integration remain in development.',
+    highlights: ['Supervisor dashboard and task views', 'Team, workload and review interfaces', 'Layered backend architecture', 'Planned shared authentication and API integration'],
+    stack: ['ASP.NET Core MVC', '.NET 10', 'C#', 'Entity Framework Core', 'MySQL', 'Razor'],
+    repositories: [
+      {label:'SmartTask frontend',private:true},
+      {label:'SmartTask backend',private:true}
+    ],
+    preview: '<h4>Task allocation</h4><div class="tiny-row"><div class="tiny-card"><b></b><i></i></div><div class="tiny-card"><b></b><i></i></div><div class="tiny-card"><b></b><i></i></div></div>'
   },
   {
     id: 'shevault', name: 'SheVault',
-    subtitle: 'Organizing member contributions',
-    category: ['web'], label: 'WEB PLATFORM', year: '2026',
-    description: 'A web platform for managing group membership, recurring contributions, meetings and payment-related workflows in one clear, organized place.',
-    highlights: ['Member management', 'Contribution workflows', 'Meetings and notifications', 'Customizable interface themes'],
-    stack: ['Next.js', 'TypeScript', 'Tailwind CSS'],
-    repo: 'https://github.com/lakonyemma/shevault-frontend', isPrivate: false
+    subtitle: 'A digital workspace for group savings',
+    category: ['web', 'systems'], label: 'FULL-STACK WEB PLATFORM', year: '2026',
+    description: 'A savings-group management platform covering members, recurring contribution cycles, meetings, notifications and mobile-money collection workflows. The frontend and REST API are maintained in separate repositories.',
+    highlights: ['Member and group management', 'Weekly contribution ledger and reports', 'Meetings, attendance and notifications', 'Mobile Money collection integration layer and audit trail'],
+    stack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Django', 'Django REST Framework', 'PostgreSQL', 'Redis'],
+    repositories: [
+      {label:'SheVault frontend',url:'https://github.com/lakonyemma/shevault-frontend'},
+      {label:'SheVault backend API',url:'https://github.com/lakonyemma/shevault-backend'}
+    ],
+    preview: '<h4>Group overview</h4><div class="vault-balance">TOTAL CONTRIBUTIONS <b>···</b></div><div class="vault-pills"><i></i><i></i><i></i></div>'
   },
   {
     id: 'campushub', name: 'Campus Hub',
     subtitle: 'An academic companion for students',
-    category: ['mobile'], label: 'MOBILE APP', year: '2026',
-    description: 'An Android-first student companion focused on coursework organization, timetables, study materials and assignment progress. A contextual study assistant is part of its planned development roadmap.',
-    highlights: ['Academic dashboard', 'Timetable and assignment tracking', 'Study workspace', 'Planned PDF-based study assistant'],
+    category: ['mobile'], label: 'ANDROID APP', year: '2026',
+    description: 'An Android-first student companion focused on academic organization, timetables, assignment progress and study materials. Its roadmap includes a contextual assistant that can work with selected course PDFs.',
+    highlights: ['Academic dashboard and timetable', 'Assignment progress tracking', 'Study workspace and PDF selection', 'Contextual study assistant roadmap'],
     stack: ['React Native', 'Expo', 'JavaScript', 'Android'],
-    repo: 'https://github.com/lakonyemma/Campus-Hub', isPrivate: false
+    repositories: [{label:'Campus Hub source code',url:'https://github.com/lakonyemma/Campus-Hub'}],
+    preview: '<h4>Your study space</h4><div class="campus-timetable"><i></i><i></i><i></i></div>'
+  },
+  {
+    id: 'commandcenter', name: 'Lakony Command Center',
+    subtitle: 'An Android workspace for everyday operations',
+    category: ['mobile', 'systems'], label: 'ANDROID PRODUCTIVITY APP', year: '2026',
+    description: 'A custom Android command center that brings together a dashboard, local tasks, notifications and dedicated spaces for calendar, inbox, developer tools, devices and finance planning. External services remain integration surfaces until authorized connections are configured.',
+    highlights: ['Unified dashboard and Control Center', 'Offline-first tasks and notifications', 'Calendar, inbox and developer workspaces', 'Finance planning and integration surfaces'],
+    stack: ['Kotlin', 'Jetpack Compose', 'Android', 'Gradle'],
+    repositories: [{label:'Command Center source code',url:'https://github.com/lakonyemma/Command-center'}],
+    preview: '<h4>CONTROL CENTER</h4><div class="tiny-row"><div class="tiny-card"><b></b><i></i></div><div class="tiny-card"><b></b><i></i></div><div class="tiny-card"><b></b><i></i></div></div>'
   },
   {
     id: 'mpkminingsarl', name: 'MPK Mining SARL',
-    subtitle: 'A premium corporate presence for a mining company',
+    subtitle: 'A corporate website for a mining company',
     category: ['web'], label: 'CORPORATE WEBSITE', year: '2026',
-    description: 'A corporate website for MPK Mining SARL, designed to present the company with a clear, polished digital identity. The project focuses on a premium visual system, responsive layouts, company information and a refined gold-focused presentation.',
-    highlights: ['Premium corporate visual identity', 'Responsive page layouts', 'Gold-focused product presentation', 'Clear company and contact information'],
+    description: 'A responsive corporate website for MPK Mining SARL, presenting its company profile, mining and mineral-processing focus, and buyer enquiry information through a gold-led visual identity.',
+    highlights: ['Responsive corporate website', 'Company and service information', 'Seven-language interface', 'Buyer enquiry email flow'],
     stack: ['HTML', 'CSS', 'JavaScript', 'Responsive Web Design'],
-    repo: 'https://github.com/lakonyemma/mpkminingsarl', isPrivate: false
+    repositories: [{label:'MPK Mining SARL website',url:'https://github.com/lakonyemma/mpkminingsarl'}],
+    preview: '<h4>MPK MINING SARL</h4><div class="mine-dashboard"><span>GOLD · MINING · TRADE</span><b>Built on value.</b><i></i><i></i><i></i></div>'
+  },
+  {
+    id: 'offlinestudent', name: 'Offline Student Management System',
+    subtitle: 'A student services app designed to work offline',
+    category: ['systems', 'mobile'], label: 'UWP DESKTOP APP', year: '2026',
+    description: 'A C# and UWP application that organizes student access to academic information and campus services without requiring an internet connection. Two repository versions explore the same student-management workflow.',
+    highlights: ['Student login and local sample records', 'Student hub and academic information', 'Fees and student service sections', 'Offline-first application flow'],
+    stack: ['C#', 'UWP', 'XAML', 'Windows'],
+    repositories: [
+      {label:'Offline Student Management System',url:'https://github.com/lakonyemma/OfflineStudentManagementSystem-'},
+      {label:'Offline Student System (alternate version)',private:true}
+    ],
+    preview: '<h4>STUDENT HUB</h4><div class="tiny-row"><div class="tiny-card"><b></b><i></i></div><div class="tiny-card"><b></b><i></i></div><div class="tiny-card"><b></b><i></i></div></div>'
+  },
+  {
+    id: 'saccoportal', name: 'SACCO Staff Management Portal',
+    subtitle: 'A staff portal for a community SACCO',
+    category: ['systems'], label: 'UWP + DATABASE APP', year: '2026',
+    description: 'A UWP and SQL Server coursework application for a community SACCO, with staff authentication and a dashboard for member services, loan services, reports and SACCO information.',
+    highlights: ['Staff login and input validation', 'SQL Server authentication', 'Member and loan service sections', 'Reports, dashboard navigation and logout'],
+    stack: ['C#', 'UWP', 'XAML', 'SQL Server'],
+    repositories: [{label:'Assignment 7 source code',url:'https://github.com/lakonyemma/Assignment-7-'}],
+    preview: '<h4>SACCO STAFF PORTAL</h4><div class="tiny-row"><div class="tiny-card"><b></b><i></i></div><div class="tiny-card"><b></b><i></i></div><div class="tiny-card"><b></b><i></i></div></div>'
+  },
+  {
+    id: 'whatsappclone', name: 'WhatsApp Interface Clone',
+    subtitle: 'A local messaging interface simulation',
+    category: ['systems', 'mobile'], label: 'UWP COURSEWORK APP', year: '2026',
+    description: 'A UWP classroom project that recreates selected messaging-interface interactions locally. It is a learning simulation and is not connected to WhatsApp or a live messaging service.',
+    highlights: ['Local account registration and sign-in', 'Contact list and conversation interface', 'Simulated replies and emoji input', 'Image picker and local theme preference'],
+    stack: ['C#', 'UWP', 'XAML', 'Local application storage'],
+    repositories: [{label:'WhatsApp Clone coursework',url:'https://github.com/lakonyemma/WhatsApp'}],
+    preview: '<h4>MESSAGES</h4><div class="vault-pills"><i></i><i></i><i></i></div>'
+  },
+  {
+    id: 'quizapplication', name: 'Quiz Application',
+    subtitle: 'A timed question-and-answer application',
+    category: ['systems'], label: 'UWP APP', year: '2026',
+    description: 'A UWP quiz application with account screens, a question bank, question navigation and a timed quiz flow.',
+    highlights: ['Login and registration screens', 'Question bank data model', 'Timed question flow', 'Score tracking'],
+    stack: ['C#', 'UWP', 'XAML'],
+    repositories: [{label:'Quiz Application repository',private:true}],
+    preview: '<h4>QUIZ SESSION</h4><div class="tiny-row"><div class="tiny-card"><b></b><i></i></div><div class="tiny-card"><b></b><i></i></div><div class="tiny-card"><b></b><i></i></div></div>'
+  },
+  {
+    id: 'databaseaccess', name: 'Database Login & Registration Apps',
+    subtitle: 'User access and registration practice projects',
+    category: ['systems'], label: 'DATABASE + UWP', year: '2026',
+    description: 'A set of small C# UWP applications exploring database-backed login, user registration and role-based navigation between administrator and user screens.',
+    highlights: ['SQL Server-backed login exercise', 'User registration form', 'Admin and user page navigation', 'Input handling and database operations'],
+    stack: ['C#', 'UWP', 'XAML', 'ADO.NET', 'SQL Server'],
+    repositories: [
+      {label:'Login using database',url:'https://github.com/lakonyemma/Login-Usingdatabase'},
+      {label:'Register user',url:'https://github.com/lakonyemma/Registeruser'},
+      {label:'Login as user UWP',private:true}
+    ],
+    preview: '<h4>USER ACCESS</h4><div class="tiny-row"><div class="tiny-card"><b></b><i></i></div><div class="tiny-card"><b></b><i></i></div></div>'
+  },
+  {
+    id: 'filepicker', name: 'File Picker Utility',
+    subtitle: 'A Windows app file-selection exercise',
+    category: ['systems'], label: 'UWP UTILITY', year: '2026',
+    description: 'A focused UWP practice application demonstrating the Windows file picker workflow, including file type filtering and opening a selected file.',
+    highlights: ['Windows FileOpenPicker integration', 'File type filtering', 'Desktop as suggested start location', 'Asynchronous file selection'],
+    stack: ['C#', 'UWP', 'XAML', 'Windows Storage APIs'],
+    repositories: [{label:'File Picking repository',private:true}],
+    preview: '<h4>CHOOSE A FILE</h4><div class="tiny-row"><div class="tiny-card"><b></b><i></i></div><div class="tiny-card"><b></b><i></i></div></div>'
+  },
+  {
+    id: 'bookmanager', name: 'Library Book Management',
+    subtitle: 'A CRUD web application for library records',
+    category: ['web', 'systems'], label: 'ASP.NET MVC APP', year: '2026',
+    description: 'An ASP.NET MVC application for managing library book records, including listing, adding, viewing, editing and deleting books.',
+    highlights: ['Library book listing', 'Add and view book details', 'Edit book records', 'Delete records with confirmation'],
+    stack: ['C#', 'ASP.NET MVC', 'Entity Framework', 'SQL Server'],
+    repositories: [{label:'Book management repository',private:true}],
+    preview: '<h4>LIBRARY CATALOGUE</h4><div class="tiny-row"><div class="tiny-card"><b></b><i></i></div><div class="tiny-card"><b></b><i></i></div><div class="tiny-card"><b></b><i></i></div></div>'
   }
 ];
 
@@ -155,7 +267,8 @@ function sceneMarkup(project) {
     campushub: '<h4>Your study space</h4><div class="campus-timetable"><i></i><i></i><i></i></div>',
     mpkminingsarl: '<h4>MPK MINING SARL</h4><div class="mine-dashboard"><span>GOLD · MINING · TRADE</span><b>Built on value.</b><i></i><i></i><i></i></div>'
   };
-  return `<div class="project-scene ${project.id}" aria-hidden="true"><div class="scene-window ${project.id}"><div class="scene-top"><i></i><i></i><i></i><strong>${project.name.toUpperCase()}</strong></div><div class="scene-ui">${inner[project.id]}</div></div><span class="scene-sticker">${project.label}</span></div>`;
+  const preview = project.preview || inner[project.id] || '<h4>PROJECT PREVIEW</h4><div class="tiny-row"><div class="tiny-card"><b></b><i></i></div><div class="tiny-card"><b></b><i></i></div></div>';
+  return `<div class="project-scene ${project.id}" aria-hidden="true"><div class="scene-window ${project.id}"><div class="scene-top"><i></i><i></i><i></i><strong>${project.name.toUpperCase()}</strong></div><div class="scene-ui">${preview}</div></div><span class="scene-sticker">${project.label}</span></div>`;
 }
 
 function renderProjects() {
@@ -176,13 +289,19 @@ function openModal(id) {
   const project = PROJECTS.find(item => item.id === id);
   if (!project) return;
   lastFocusedElement = document.activeElement;
+  const repositories = project.repositories || (project.repo ? [{label:'Source repository',url:project.repo}] : []);
+  const repositoryMarkup = repositories.length
+    ? `<h3>PROJECT REPOSITORIES</h3><div class="modal-repositories">${repositories.map(repository => repository.private
+      ? `<span class="modal-repository-private">${repository.label} · Private source</span>`
+      : `<a class="modal-repository-link" href="${repository.url}" target="_blank" rel="noopener noreferrer">${repository.label} <span aria-hidden="true">↗</span></a>`).join('')}</div>`
+    : '<p class="modal-private-note">Source repository is not publicly available.</p>';
   $('#modal-content').innerHTML = `
     <div class="modal-scene">${sceneMarkup(project)}</div>
     <div class="modal-main"><div class="modal-meta"><span>PROJECT DETAILS</span><span>${project.year} · ${project.label}</span></div>
       <h2 id="modal-title">${project.name}<span style="color:var(--accent)">.</span></h2><p>${project.description}</p>
       <h3>WHAT IT COVERS</h3><div class="modal-points">${project.highlights.map(item => `<span>${item}</span>`).join('')}</div>
       <h3>TOOLS & TECHNOLOGIES</h3><div class="modal-tags">${project.stack.map(item => `<span>${item}</span>`).join('')}</div>
-      ${project.repo ? `<a class="button button-primary modal-link" href="${project.repo}" target="_blank" rel="noopener noreferrer">Explore on GitHub <span aria-hidden="true">↗</span></a>` : '<div class="button modal-link" aria-disabled="true">Private project, repository not public <span aria-hidden="true">↗</span></div>'}
+      ${repositoryMarkup}
     </div>`;
   $('#project-modal').hidden = false;
   document.body.style.overflow = 'hidden';
