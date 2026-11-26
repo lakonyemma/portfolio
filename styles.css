@@ -1879,3 +1879,19 @@ body[data-theme="light"] .screen-home {
     radial-gradient(ellipse at 76% 42%,rgba(54,112,82,.13) 0%,rgba(54,112,82,.06) 34%,transparent 60%),
     linear-gradient(135deg,#e7ebe5 0%,#dfe5de 54%,#f1f2ec 100%);
 }
+
+
+/* Homepage portrait image sizing and framing. */
+.portrait-placeholder.portrait-image {
+  display:block;
+  aspect-ratio:4/5;
+  overflow:hidden;
+  background:#080d0a;
+}
+.portrait-image img {
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center 34%;
+}
