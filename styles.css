@@ -1577,3 +1577,28 @@ body[data-theme=light] .portrait-placeholder {
   .aerospace-feature-content p { font-size: 12px; line-height: 1.75; }
   .aerospace-index { right: 16px; top: 16px; }
 }
+
+
+/* Fixed page reading progress indicator */
+.scroll-progress {
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  overflow: hidden;
+  pointer-events: none;
+  background: color-mix(in srgb, var(--accent) 14%, transparent);
+}
+#scroll-progress-fill {
+  display: block;
+  width: 0;
+  height: 100%;
+  background: var(--accent);
+  box-shadow: 0 0 10px color-mix(in srgb, var(--accent) 45%, transparent);
+  transition: width .08s linear;
+}
+@media (prefers-reduced-motion: reduce) {
+  #scroll-progress-fill { transition: none; }
+}
