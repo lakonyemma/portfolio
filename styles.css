@@ -1162,3 +1162,99 @@ h1,h2,h3,h4,.brand-mark,.section-title,.about-name {
 @media (prefers-reduced-motion:reduce) {
   .focus-orbit-ring { transform:none; }
 }
+
+
+/* A sharper editorial direction: less portfolio template, more product studio. */
+:root { --accent:#e7ff59; --accent-ink:#171a10; }
+body[data-theme=dark] {
+  --bg:#11120f; --panel:#191b16; --panel-lift:#24271e; --fg:#f3f1e8;
+  --muted:#a4a69a; --line:#34372d; --line-soft:#272a22; --art:#191d15;
+  --outline:#f3f1e8; --shadow:rgba(0,0,0,.42);
+}
+body[data-theme=light] {
+  --bg:#f1f0e8; --panel:#fbfaf4; --panel-lift:#e2e4d7; --fg:#1b1d16;
+  --muted:#696d60; --line:#d2d4c7; --line-soft:#e0e2d7; --art:#e7eadc;
+  --outline:#1b1d16; --shadow:rgba(30,35,20,.12); --accent:#667d16; --accent-ink:#fff;
+}
+.screen-home {
+  background:
+    radial-gradient(ellipse at 82% 22%,color-mix(in srgb,var(--accent) 10%,transparent),transparent 34%),
+    linear-gradient(135deg,transparent 0 57%,color-mix(in srgb,var(--panel) 65%,transparent) 57% 100%);
+}
+.screen-home .home-layout {
+  min-height:calc(100% - 56px);
+  grid-template-columns:minmax(0,1.02fr) minmax(350px,.98fr);
+  gap:clamp(28px,4vw,72px);
+  padding:clamp(35px,5vh,68px) 0 34px;
+}
+.screen-home .eyebrow { color:var(--accent); }
+.screen-home .hero-heading {
+  font-size:clamp(60px,7.1vw,112px);
+  line-height:.91; letter-spacing:-.095em; font-weight:850;
+  margin:clamp(26px,4vh,46px) 0 24px; max-width:760px;
+}
+.screen-home .highlight-word { color:var(--accent); }
+.screen-home .home-description { max-width:480px; font-size:clamp(15px,1.2vw,17px); line-height:1.75; }
+.screen-home .hero-meta { color:var(--muted); flex-wrap:wrap; gap:10px; }
+.hero-focus {
+  min-height:510px; padding:19px 20px 15px; border:1px solid var(--line);
+  background:linear-gradient(145deg,var(--panel),color-mix(in srgb,var(--accent) 5%,var(--panel)));
+  box-shadow:0 26px 70px var(--shadow); justify-content:flex-start;
+}
+.hero-focus:before { opacity:.2; background-size:28px 28px; }
+.spotlight-heading { padding:24px 0 19px; }
+.spotlight-heading>span { color:var(--accent); font-size:8px; font-weight:850; letter-spacing:.18em; }
+.spotlight-heading strong { display:block; margin-top:8px; font-size:clamp(36px,4vw,52px); line-height:1; letter-spacing:-.08em; }
+.spotlight-heading strong span { color:var(--accent); }
+.spotlight-heading p { color:var(--muted); font-size:11px; margin:8px 0 0; }
+.spotlight-window { overflow:hidden; border:1px solid var(--line); background:#f3f4ef; color:#20231c; box-shadow:0 18px 38px rgba(0,0,0,.22); transform:rotate(-1.2deg); transition:transform .4s var(--ease); }
+.hero-focus:hover .spotlight-window { transform:rotate(0) translateY(-3px); }
+.spotlight-window-bar { height:29px; display:flex; align-items:center; justify-content:space-between; padding:0 10px; background:#e5e8df; border-bottom:1px solid #d7dbd0; color:#788071; font:700 7px/1 Inter,sans-serif; letter-spacing:.12em; }
+.spotlight-window-bar b { color:#42483c; font-size:7px; }
+.spotlight-window-bar i { font-style:normal; }
+.spotlight-app { min-height:210px; display:grid; grid-template-columns:37px 1fr; }
+.spotlight-sidebar { background:#22291e; color:#eaff82; display:flex; align-items:center; flex-direction:column; gap:17px; padding:12px 0; }
+.spotlight-sidebar b { font-size:17px; }
+.spotlight-sidebar i { width:12px; height:12px; border:1px solid #68735a; border-radius:4px; }
+.spotlight-content { padding:14px 16px 12px; }
+.spotlight-greeting span,.spotlight-task-title { display:block; color:#858b7d; font-size:6px; font-weight:850; letter-spacing:.15em; }
+.spotlight-greeting b { display:block; margin-top:4px; font-size:16px; letter-spacing:-.05em; }
+.spotlight-stats { display:grid; grid-template-columns:repeat(3,1fr); gap:7px; margin:12px 0 13px; }
+.spotlight-stats div { position:relative; min-height:48px; padding:7px; border:1px solid #e0e3da; background:#fff; }
+.spotlight-stats small { display:block; color:#8a9083; font-size:5px; font-weight:800; letter-spacing:.08em; }
+.spotlight-stats strong { display:block; margin-top:4px; font-size:17px; line-height:1; }
+.spotlight-stats i { position:absolute; right:7px; bottom:8px; width:5px; height:5px; border-radius:50%; background:#9ac34a; }
+.spotlight-task-title { margin-bottom:6px; }
+.spotlight-task { min-height:24px; display:grid; grid-template-columns:9px 1fr auto; align-items:center; gap:7px; border-top:1px solid #e5e7e0; font-size:7px; color:#454b3e; }
+.spotlight-task>i { width:8px; height:8px; border:1px solid #aeb5a3; border-radius:3px; }
+.spotlight-task b { font-size:5px; color:#8a8e7f; letter-spacing:.08em; }
+.spotlight-link { display:flex; align-items:center; justify-content:space-between; padding:14px 0 13px; color:var(--fg); font-size:8px; font-weight:850; letter-spacing:.16em; border-bottom:1px solid var(--line); }
+.spotlight-link b { color:var(--accent); font-size:19px; font-weight:400; transition:transform .2s; }
+.spotlight-link:hover b { transform:translate(3px,-3px); }
+.hero-focus-bottom { margin-top:auto; padding-top:14px; font-size:7px; }
+.screen-work .section-title { font-size:clamp(48px,6vw,86px); }
+.screen-work .project-card { transition:transform .35s var(--ease),border-color .35s,box-shadow .35s; }
+.screen-work .project-card:hover { transform:translateY(-7px); box-shadow:0 20px 48px var(--shadow); }
+.screen-work .project-scene { border-radius:2px; }
+.screen-work .filter-pill.is-selected { background:var(--accent); color:var(--accent-ink); border-color:var(--accent); }
+.screen-about .about-name { letter-spacing:-.09em; }
+.screen-contact .contact-title { font-size:clamp(54px,7vw,100px); }
+@media(max-width:1100px) {
+ .screen-home .home-layout { grid-template-columns:minmax(0,1fr) minmax(300px,.9fr); gap:25px; }
+ .screen-home .hero-heading { font-size:clamp(56px,6.6vw,86px); }
+ .hero-focus { min-height:480px; }
+}
+@media(max-width:860px) {
+ .screen-home .home-layout { grid-template-columns:1fr; gap:24px; padding:35px 0 28px; }
+ .screen-home .hero-heading { font-size:clamp(62px,12vw,100px); }
+ .hero-focus { min-height:465px; }
+ .spotlight-window { transform:none; }
+}
+@media(max-width:520px) {
+ .screen-home .hero-heading { font-size:clamp(54px,13.2vw,75px); }
+ .hero-focus { min-height:435px; padding:15px; }
+ .spotlight-app { min-height:194px; }
+ .spotlight-content { padding:12px 10px; }
+ .spotlight-greeting b { font-size:14px; }
+}
+@media(prefers-reduced-motion:reduce) { .spotlight-window { transform:none; } }
