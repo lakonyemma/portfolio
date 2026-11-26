@@ -1851,3 +1851,15 @@ body[data-theme="light"] .screen-contact:before{
 @media(prefers-reduced-motion:no-preference){
   html{scroll-behavior:smooth}
 }
+
+
+/* Remove decorative meta and eyebrow rules throughout the portfolio. */
+.eyebrow-stroke,
+.meta-line,
+.eyebrow::before,
+.eyebrow::after,
+.hero-meta::before,
+.hero-meta::after {
+  display: none !important;
+  content: none !important;
+}
